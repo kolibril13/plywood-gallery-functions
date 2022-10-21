@@ -1,0 +1,106 @@
+{
+  "Functions": [
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_001_Header1.png",
+      "celltype": "Header",
+      "css": "border: 3px solid #ED6A5A;width: 270px; height: auto;",
+      "code": "import numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns; sns.set()\nplt.rcParams[&#39;figure.dpi&#39;] = 150  \nplt.rcParams[&#39;lines.linewidth&#39;] = 2"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_002_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\n\nx=np.arange(0,10,0.1)\nax.set_xlabel(\"x-Axis\")\nax.set_ylabel(\"y-Axis\")\nax.set_xlim(0,9)\nax.plot(x,-x**2,  \"b\", label= r\"$-x^2$\")\nax.plot(x,-0.5*x**2,  \"b--\", label= r\"$-0.5\\,x^2$\")\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_003_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\nx= np.linspace(0., 10., 100)\ndef linear_step_func(x,x0,x1):\n    y= np.piecewise(x, [\n        x < x0, \n       (x >= x0) & (x <= x1), \n        x > x1],\n            [0.,\n            lambda x: x/(x1-x0)+x0/(x0-x1), \n             1.]\n       )\n    return y\nax.plot(x, linear_step_func(x,2, 5), label= r\"Linear Step Function\");\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_004_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\nx= np.linspace(-10, 10., 100)\nz=0\ny=np.heaviside(x,z) # second argument: f(x=0)=0\nax.plot(x, y, label = \"Heaviside\");\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_005_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\nx= np.linspace(-10, 10., 100)\ny=np.absolute(x) \nax.plot(x, y, label = \"Absolute\");\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_006_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\n\nx=np.linspace(0,10,1001)\nax.plot(x, np.floor(x), label= &#39;Floor&#39;)\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_007_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\nt = np.linspace(-10, 10, 100)\nsig = 1 / (1 + np.exp(-t))\nax.axhline(c=\"k\")\nax.axvline(c=\"k\")\nax.axhline(y=0.5,c=\"k\", ls = \":\")\nax.axhline(y=1.0,c=\"k\", ls = \":\")\n#ax.plot(t, sig, \"b-\", label=r\"$\\sigma(t) = \\frac{1}{1 + e^{-t}}$\")\nax.plot(t, sig, \"b-\", label=\"Sigmoid\")\nax.legend(loc=\"lower right\", fontsize=14)"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_008_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "from scipy import special\n\nfig, ax = plt.subplots(figsize=(5, 3))\n\nx = np.linspace(-3, 3)\nax.plot(x, special.erf(x), label= \"Error Function\")\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_009_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\n\ndef gaussian(x, mu, sig):\n    return 1/(sig*np.sqrt(2*np.pi))*np.exp( ( -1/2 * ( (x-mu)/sig)**2 ) )\n\nx_values = np.linspace(-5, 5, 220)\nmu=0; sig= 1\n\nax.axhline(c=\"k\")\nax.axvline(c=\"k\")\nax.axhline(y=gaussian(x_values, mu, sig).max(),c=\"k\", ls = \":\")\nax.axhline(y=gaussian(x_values, mu, sig).max()/2,c=\"k\", ls = \":\")\n\nlabel= r\"$f(x) = \\frac{1}{\\sigma \\sqrt{2\\pi} } e^{-\\frac{1}{2}\\left(\\frac{x-\\mu}{\\sigma}\\right)^2}$\"\nax.plot(x_values, gaussian(x_values, mu, sig) , label = label)\nax.legend(loc=\"lower right\", fontsize=14)"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_010_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\nx = np.linspace(-2,2, 220)\nax.plot(x, np.exp(x), label= r\"$e^x$\")\nax.axhline(c=\"k\")\nax.axvline(c=\"k\")\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_011_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\nx=np.arange(0.01,10,0.01)\nax.plot(x, np.log10(x), label= r\"$log_{10}$\")\nax.axhline(c=\"k\")\nax.axvline(c=\"k\")\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_012_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\n\nx=np.linspace(0,4*np.pi,1001)\nlabels = [ r&#39;$\\frac{\\pi}{2}$&#39;,&#39;$\\pi$&#39;,r&#39;$\\frac{3\\pi}{2}$&#39;, &#39;$2\\pi$&#39;, r&#39;$\\frac{5\\pi}{2}$&#39;, &#39;$3\\pi$&#39;, r&#39;$\\frac{7\\pi}{2}$&#39;, &#39;$4\\pi$&#39; ]\ntick_pos= [ (i+1)*np.pi/2 for i in range(0,len(labels))]\n[ax.axhline(i, color= \"Gray\", alpha=0.4 ) for i in range(-2,3)]\n[ax.axvline(i, color= \"Gray\", alpha=0.4 ) for i in tick_pos]\nax.axhline(0, color= \"Black\")\nax.set_ylim(-3,3)\nax.set_xlim(0, 4*np.pi+ 0.3*np.pi)\n################\nax.plot(x, 2*np.sin(x), label= \"Sine\")\nplt.yticks(fontsize=12, alpha=0.6);\nplt.xticks(tick_pos, labels,fontsize=12, alpha=0.6 );\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_013_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\nx=np.arange(-10,10,0.01)\nax.plot(x, np.sinc(x), label= \"Sinc\")\nax.axhline(c=\"k\")\nax.axvline(c=\"k\")\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_014_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\nx=np.arange(-4,4,0.01)\nax.plot(x, np.sinh(x), label= \"Sinh\")\nax.axhline(c=\"k\")\nax.axvline(c=\"k\")\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_015_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\n\nx=np.linspace(-10,10,101) # has zero in it\nx[x == 0 ] = np.nan\ny= 1/x\nplt.plot(x, 1/x, label= r&#39;$f(x)=\\frac{1}{x}$&#39;) #  dividing by zero would encountered in true_divide.\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_016_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "fig, ax = plt.subplots(figsize=(5, 3))\nx = np.linspace(0, 5*np.pi, 10000) + np.pi/2\ny = np.tan(x)\ncutoff = 15\ny[y > cutoff] = np.nan\ny[y < -cutoff] = np.nan\nax.plot(x, y,  label= &#39;Tangence&#39;)\nax.legend(loc=\"lower right\", fontsize=14);"
+    },
+    {
+      "image_path": "gallery_assets_5_Functions/Functions_017_Normal.png",
+      "celltype": "Normal",
+      "css": "border: 3px solid #007AB8;width: 270px; height: auto;",
+      "code": "# implementation 1\nfig, ax = plt.subplots(figsize=(5, 3))\n\nx = np.linspace(-100,100,400)\ndef g(x,k_size):\n    k_all=np.linspace(0,0.5,k_size)\n    x_m, k_m = np.meshgrid(x,k_all)\n    matrix= np.exp(-1j*(k_m*x_m - (k_m/(k_m**1.100+1))*50) )\n    my_sum=np.sum(matrix,axis=0)\n    return my_sum\nax.axhline(c=\"k\")\nax.axvline(c=\"k\")\n#ax.plot(x,np.real(g(x,k_size=100)), label = r\"$\\psi(x, t) = \\sum_j C_j \\cdot e^{-i( k_j \\cdot x -  \\frac{k_j}{c(k_j)} \\cdot t )} \\ $\");\nax.plot(x,np.real(g(x,k_size=100)), label = \"Wave Packet\");\n\nax.legend(loc=\"lower right\", fontsize=14);"
+    }
+  ]
+}

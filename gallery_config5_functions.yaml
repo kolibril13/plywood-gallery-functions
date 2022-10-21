@@ -1,0 +1,12 @@
+project_name: Plywood Gallery - Functions
+repository_url: https://github.com/kolibril13/plywood-gallery-functions
+user_content_version: 0.11.2 (Seaborn)
+description: |
+  Cheat sheet gallery for mathematical functions
+favicon: icon.png
+preview_image: https://kolibril13.github.io/plywood-gallery-functions/preview_image.png
+gallery_parameters_path: gallery_assets_5_Functions/gallery_parameters.json
+
+
+
+
