@@ -338,7 +338,7 @@
 
                         <p style="opacity: 0.4;"> <a title="Plywood Core at GitHub"
                                 href="https://github.com/kolibril13/plywood-gallery"><span class="tooltip">
-                                    plywood core v0.0.8</span></a></p>
+                                    plywood core v0.0.9</span></a></p>
                     </td>
                 </tr>
                 <tr>
@@ -387,8 +387,9 @@
     let request = new XMLHttpRequest();
     request.open("GET", "gallery_assets/gallery_parameters.json", false);
     request.send(null);
-    let jsonData = JSON.parse(request.responseText);
-
+    let json_content_all = JSON.parse(request.responseText);
+    jsonData = json_content_all["plywood_content"]
+    
     const gallery_area = document.getElementById("gallery_container");
 
     for (let key of Object.keys(jsonData)) {
