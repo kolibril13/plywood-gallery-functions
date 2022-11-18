@@ -1,12 +1,9 @@
 project_name: Functions
 repository_url: https://github.com/kolibril13/plywood-gallery-functions
-user_content_version: 0.11.2 (Seaborn)
+user_content_version: 3.6.0 (Matplotlib)
 description: |
   Cheat sheet gallery for mathematical functions
 favicon: icon.png
 preview_image: https://kolibril13.github.io/plywood-gallery-functions/preview_image.png
 gallery_parameters_path: gallery_assets/gallery_parameters.json
-
-
-
 
