@@ -1,6 +1,6 @@
 {
   "plywood_metadata": {
-    "plywood_gallery_core_version": "0.0.10"
+    "plywood_gallery_core_version": "0.0.12"
   },
   "plywood_content": {
     "Functions": [
@@ -8,7 +8,7 @@
         "image_path": "gallery_assets/Functions_001_Header1.png",
         "celltype": "Header",
         "css": "border: 3px solid #ED6A5A;width: 220px; height: auto;",
-        "code": "import numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns; sns.set()\nplt.rcParams[&#39;figure.dpi&#39;] = 150  \nplt.rcParams[&#39;lines.linewidth&#39;] = 2"
+        "code": "import numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns; sns.set()\nplt.rcParams['figure.dpi'] = 150  \nplt.rcParams['lines.linewidth'] = 2"
       },
       {
         "image_path": "gallery_assets/Functions_002_Normal.png",
@@ -74,7 +74,7 @@
         "image_path": "gallery_assets/Functions_012_Normal.png",
         "celltype": "Normal",
         "css": "border: 3px solid #007AB8;width: 220px; height: auto;",
-        "code": "fig, ax = plt.subplots(figsize=(5, 3))\n\nx=np.linspace(0,4*np.pi,1001)\nlabels = [ r&#39;$\\frac{\\pi}{2}$&#39;,&#39;$\\pi$&#39;,r&#39;$\\frac{3\\pi}{2}$&#39;, &#39;$2\\pi$&#39;, r&#39;$\\frac{5\\pi}{2}$&#39;, &#39;$3\\pi$&#39;, r&#39;$\\frac{7\\pi}{2}$&#39;, &#39;$4\\pi$&#39; ]\ntick_pos= [ (i+1)*np.pi/2 for i in range(0,len(labels))]\n[ax.axhline(i, color= \"Gray\", alpha=0.4 ) for i in range(-2,3)]\n[ax.axvline(i, color= \"Gray\", alpha=0.4 ) for i in tick_pos]\nax.axhline(0, color= \"Black\")\nax.set_ylim(-3,3)\nax.set_xlim(0, 4*np.pi+ 0.3*np.pi)\n################\nax.plot(x, 2*np.sin(x), label= \"Sine\")\nplt.yticks(fontsize=12, alpha=0.6);\nplt.xticks(tick_pos, labels,fontsize=12, alpha=0.6 );\nax.legend(loc=\"lower right\", fontsize=14);"
+        "code": "fig, ax = plt.subplots(figsize=(5, 3))\n\nx=np.linspace(0,4*np.pi,1001)\nlabels = [ r'$\\frac{\\pi}{2}$','$\\pi$',r'$\\frac{3\\pi}{2}$', '$2\\pi$', r'$\\frac{5\\pi}{2}$', '$3\\pi$', r'$\\frac{7\\pi}{2}$', '$4\\pi$' ]\ntick_pos= [ (i+1)*np.pi/2 for i in range(0,len(labels))]\n[ax.axhline(i, color= \"Gray\", alpha=0.4 ) for i in range(-2,3)]\n[ax.axvline(i, color= \"Gray\", alpha=0.4 ) for i in tick_pos]\nax.axhline(0, color= \"Black\")\nax.set_ylim(-3,3)\nax.set_xlim(0, 4*np.pi+ 0.3*np.pi)\n################\nax.plot(x, 2*np.sin(x), label= \"Sine\")\nplt.yticks(fontsize=12, alpha=0.6);\nplt.xticks(tick_pos, labels,fontsize=12, alpha=0.6 );\nax.legend(loc=\"lower right\", fontsize=14);"
       },
       {
         "image_path": "gallery_assets/Functions_013_Normal.png",
