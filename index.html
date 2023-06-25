@@ -382,7 +382,8 @@
                         </div>
                     </td>
                     <td class="info_version">
-                        <p style="opacity: 0.8;"> <a title="Plywood Core at GitHub" href="https://github.com/kolibril13/plywood-gallery-functions"><span
+                        <p style="opacity: 0.8;"> <a title="Plywood Core at GitHub"
+                                href="https://github.com/kolibril13/plywood-gallery-functions"><span
                                     class="tooltip">user content v3.6.0 (Matplotlib) </span></a><br></p>
 
                         <p style="opacity: 0.4;"> <a title="Plywood Core at GitHub"
@@ -458,6 +459,11 @@
         hljs.highlightAll();
     }
 
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            resetContent();
+        }
+    });
     // rest the code content block to an empty paragraph 
     function resetContent(imgs) {
         code_snippet.innerHTML = "<p> <br> </p>" // Reset the text content
