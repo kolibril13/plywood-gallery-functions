@@ -8,7 +8,7 @@
     <title>Functions</title>
     <meta name="description" content="Cheat sheet gallery for mathematical functions
 ">
-    
+
 
     <!-- OpenGraph Meta Tags -->
     <meta property="og:url" content="https://github.com/kolibril13/plywood-gallery-functions">
@@ -28,7 +28,7 @@
     <meta name="twitter:image" content="https://kolibril13.github.io/plywood-gallery-functions/preview_image.png">
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-        
+
 
 
 
@@ -310,8 +310,7 @@
         </div>
         <div id="gallery_container">
             <template gallery-item-template>
-                <img class='gallery_entry' src='' data-code='' style='width: auto;'
-                    onclick='displayCode(this);'>
+                <img class='gallery_entry' src='' data-code='' style='width: auto;' onclick='displayCode(this);'>
             </template>
 
             <template heading-template>
@@ -409,7 +408,7 @@
     function displayCode(imgs) {
         // Escape the HTML
         codeSnippet.innerHTML = new Option(imgs.dataset.code).innerHTML
-        
+
         hljs.highlightAll();
     }
 
