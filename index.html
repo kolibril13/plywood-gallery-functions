@@ -79,7 +79,7 @@
             width: 600px;
         }
 
-        
+
 
         .container_code .my_copy_button {
             position: absolute;
@@ -103,12 +103,12 @@
             opacity: 0.6;
         }
 
-        .tooltip {
+        .tooltipCopy {
             position: relative;
             display: inline-block;
         }
 
-        .tooltip .tooltiptext {
+        .tooltipCopy .tooltipCopytext {
             visibility: hidden;
             background-color: #555;
             color: #fff;
@@ -119,12 +119,13 @@
             z-index: 1;
             bottom: 150%;
             left: 50%;
-            margin-left: -22px;
+            width: 45px;
+            margin-left: -28px;
             opacity: 0;
             transition: opacity 0.3s;
         }
 
-        .tooltip .tooltiptext::after {
+        .tooltipCopy .tooltipCopytext::after {
             content: "";
             position: absolute;
             top: 100%;
@@ -135,7 +136,7 @@
             border-color: #555 transparent transparent transparent;
         }
 
-        .tooltip:hover .tooltiptext {
+        .tooltipCopy:hover .tooltipCopytext {
             visibility: visible;
             opacity: 1;
         }
@@ -341,9 +342,9 @@
 <b>Code:</b>
 <code class="python" id="code_snippet"> <br> </code>
 </pre> <!-- better naming of these divs here-->
-            <div class="tooltip my_copy_button">
+            <div class="tooltipCopy my_copy_button">
                 <button onclick="myFunction()" onmouseout="outFunc()">
-                    <span class="tooltiptext" id="myTooltip">Copy</span>
+                    <span class="tooltipCopytext" id="CopyTooltip">Copy</span>
                     <img src="https://raw.githubusercontent.com/executablebooks/sphinx-copybutton/4a8050dea36536b005d3e757b1ac09886174f634/sphinx_copybutton/_static/copy-button.svg"
                         alt="Copy text" style="width: 18px; height: 18px;">
                 </button>
@@ -524,12 +525,12 @@
         const copyText = document.getElementById("code_snippet")
         navigator.clipboard.writeText(copyText.innerText);
         console.log(copyText.innerText)
-        var tooltip = document.getElementById("myTooltip");
+        var tooltip = document.getElementById("CopyTooltip");
         tooltip.innerHTML = "Copied";
     }
 
     function outFunc() {
-        var tooltip = document.getElementById("myTooltip");
+        var tooltip = document.getElementById("CopyTooltip");
         tooltip.innerHTML = "Copy";
     }
 
